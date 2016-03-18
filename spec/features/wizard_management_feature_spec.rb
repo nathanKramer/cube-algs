@@ -29,4 +29,14 @@ RSpec.feature 'Wizard management' do
 
     expect(page).to have_content('Ridcully')
   end
+
+  scenario 'Visitor deletes a Wizard' do
+    Wizard.create(name: 'Rincewind')
+
+    visit wizards_path
+    click_on 'Delete'
+
+    expect(page).not_to have_content('Rincewind')
+    expect(page).to have_content('Number of wizards: 0')
+  end
 end
