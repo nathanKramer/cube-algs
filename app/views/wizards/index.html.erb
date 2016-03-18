@@ -1,5 +1,21 @@
-<% @wizards.each do |wizard| %>
-  <%= wizard.name %>
-<% end %>
+<div class="panel panel-default">
+  <div class="panel-heading">Wizards and shit</div>
 
-Number of wizards: <%= @wizards.count %>
+  <!-- Table -->
+  <table class="table">
+    <thead>
+      <tr><th>Wazatar</th><th>Name</th><th>Actions</th></tr>
+    </thead>
+    <tbody>
+      <%= content_tag_for(:tr, @wizards) do |wizard| %>
+        <td></td>
+        <td><%= wizard.name %></td>
+        <td><%= link_to 'Edit', edit_wizard_path(wizard) %>
+      <% end %>
+    </tbody>
+  </table>
+
+  <div class="panel-footer">
+    <p>Number of wizards: <%= @wizards.count %></p>
+  </div>
+</div>

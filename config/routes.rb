@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-  resources :wizards, only: [:new, :create, :index]
+  resources :wizards, except: [:destroy, :show]
+  root 'wizards#index'
 end
