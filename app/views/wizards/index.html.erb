@@ -1,7 +1,14 @@
 <div class="panel panel-default">
   <div class="panel-heading"><h1>Wizadex</h1></div>
   <div class="panel-body">
-    <%= link_to 'New Wizard', new_wizard_path, class: 'btn btn-primary' %>
+  <%= form_tag wizards_path, class: 'form-inline', method: :get do %>
+    <div class="form-group">
+      <%= label_tag :search, 'Search' %>
+      <%= text_field_tag :search, @search, class: 'form-control' %>
+      <%= submit_tag "Go", class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+  <%= link_to 'New Wizard', new_wizard_path, class: 'btn btn-primary' %>
   </div>
   <!-- Table -->
   <table class="table">
@@ -10,7 +17,7 @@
     </thead>
     <tbody>
       <%= content_tag_for(:tr, @wizards) do |wizard| %>
-        <td></td>
+        <td><%= image_tag wizard.wazatar.url(:thumb) %></td>
         <td><%= link_to wizard.name, wizard_path(wizard) %></td>
         <td>
           <%= link_to 'Edit', edit_wizard_path(wizard) %> |

@@ -1,5 +1,6 @@
 class WizardsController < ApplicationController
   before_action :find_wizard, only: [:update, :edit, :destroy, :show]
+  before_action :search_wizards, only: [:index]
 
   # GET /wizards/new
   def new
@@ -27,7 +28,11 @@ class WizardsController < ApplicationController
 
   # GET /wizards
   def index
-    @wizards = Wizard.all
+    respond_to do |format|
+      format.html
+      format.xml { render xml: @wizards }
+      format.json { render json: @wizards }
+    end
   end
 
   # GET /wizards/:id/show
@@ -50,7 +55,15 @@ class WizardsController < ApplicationController
     @wizard = Wizard.find(params[:id])
   end
 
+  def search_wizards
+    if params[:search]
+      @wizards = Wizard.where('LOWER(name) LIKE LOWER(?)', "%#{params[:search]}%")
+    else
+      @wizards = Wizard.all
+    end
+  end
+
   def wizard_params
-    params.require(:wizard).permit(:name)
+    params.require(:wizard).permit([:name, :wazatar])
   end
 end

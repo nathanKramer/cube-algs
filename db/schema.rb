@@ -11,13 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160318220230) do
+ActiveRecord::Schema.define(version: 20160319012246) do
 
   create_table "wizards", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
     t.string   "wazatar"
+    t.string   "wazatar_file_name"
+    t.string   "wazatar_content_type"
+    t.integer  "wazatar_file_size"
+    t.datetime "wazatar_updated_at"
   end
 
   add_index "wizards", ["name"], name: "index_wizards_on_name", unique: true

@@ -1,5 +1,5 @@
 <div class="card">
-  <img class="card-img-top" data-src="..." alt="Wazatar">
+  <%= image_tag @wizard.wazatar.url %>
   <div class="card-block">
     <h4 class="card-title"><%= @wizard.name %></h4>
     <p class="card-text">Generic Wizard Description</p>
@@ -9,7 +9,8 @@
       <%= link_to "Delete", @wizard,
         method: :delete,
         data: { confirm: "Are you sure you want to delete #{@wizard.name}?" },
-        class: 'btn btn-primary' %>
+        class: 'btn btn-warning' %>
+      <%= link_to "Back", wizards_path, class: 'btn btn-default' %>
     </div>
   </div>
 </div>

@@ -49,4 +49,14 @@ RSpec.feature 'Wizard management' do
 
     expect(page).to have_content('Rincewind')
   end
+
+  scenario 'Visitor searches for a Wizard' do
+    Wizard.create(name: 'Gandalf the Grey')
+
+    visit wizards_path
+    fill_in 'Search', with: 'Gandalf'
+    click_on 'Go'
+
+    expect(page).to have_content('Number of wizards: 1')
+  end
 end
