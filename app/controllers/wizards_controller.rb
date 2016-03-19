@@ -56,8 +56,9 @@ class WizardsController < ApplicationController
   end
 
   def search_wizards
-    if params[:search]
-      @wizards = Wizard.where('LOWER(name) LIKE LOWER(?)', "%#{params[:search]}%")
+    @search = params[:search]
+    if @search
+      @wizards = Wizard.where('LOWER(name) LIKE LOWER(?)', "%#{@search}%")
     else
       @wizards = Wizard.all
     end

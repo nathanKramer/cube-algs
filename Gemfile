@@ -5,7 +5,7 @@ gem 'sqlite3'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
-gem 'bootstrap-sass'
+gem 'bootstrap', '~> 4.0.0.alpha3'
 gem "paperclip", "~> 4.3"
 
 group :development, :test do
