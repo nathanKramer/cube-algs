@@ -2,7 +2,8 @@ require 'rails_helper'
 
 RSpec.feature 'Wizard management' do
   scenario 'Visitor adds a wizard' do
-    visit new_wizard_path
+    visit wizards_path
+    click_on 'New Wizard'
     fill_in 'Name', with: 'Rincewind'
     click_on 'Save'
 
@@ -38,5 +39,14 @@ RSpec.feature 'Wizard management' do
 
     expect(page).not_to have_content('Rincewind')
     expect(page).to have_content('Number of wizards: 0')
+  end
+
+  scenario 'Visitor visits an existing Wizard' do
+    Wizard.create(name: 'Rincewind')
+
+    visit wizards_path
+    click_on 'Rincewind'
+
+    expect(page).to have_content('Rincewind')
   end
 end

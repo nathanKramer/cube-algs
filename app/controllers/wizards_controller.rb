@@ -1,5 +1,5 @@
 class WizardsController < ApplicationController
-  before_action :find_wizard, only: [:update, :edit]
+  before_action :find_wizard, only: [:update, :edit, :destroy, :show]
 
   # GET /wizards/new
   def new
@@ -30,8 +30,18 @@ class WizardsController < ApplicationController
     @wizards = Wizard.all
   end
 
+  # GET /wizards/:id/show
+  def show
+  end
+
   # GET /wizards/:id/edit
   def edit
+  end
+
+  # DELETE /wizards/:id
+  def destroy
+    @wizard.destroy
+    redirect_to wizards_path
   end
 
   private
