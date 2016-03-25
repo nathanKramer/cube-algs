@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Wizadex</title>
-  <%= favicon_link_tag 'pixeli.png' %>
+  <title>Cube Algs</title>
+  <%= favicon_link_tag 'favicon.png' %>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <nav class="navbar navbar-light bg-primary">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="/wizards">
-          <%= image_tag('pixeli.png', width: 32, height: 32) %>
-        </a>
-      </div>
+  <nav class="navbar navbar-dark bg-primary navbar-fixed-top">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/cases">
+        <%= image_tag('favicon.png', width: 32, height: 32) %>
+      </a>
+    </div>
+
+    <%= yield :nav %>
+
+    <div class="col-sm-3 col-md-3 pull-md-right">
+      <%= yield :search %>
     </div>
   </nav>
   <div class="container">
