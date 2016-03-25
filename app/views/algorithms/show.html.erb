@@ -1,0 +1,17 @@
+<div class="card">
+  <div class="card-header"><%= @algorithm.algorithm %></div>
+  <%# image_tag @algorithm.wazatar.url %>
+  <div class="card-block">
+    <p class="card-text"><%= @algorithm.description %></p>
+  </div>
+  <div class="card-footer">
+    <div class="btn-group" role="group" aria-label="Actions">
+      <%= link_to "Edit", edit_algorithm_path, class: 'btn btn-primary' %>
+      <%= link_to "Delete", @algorithm,
+        method: :delete,
+        data: { confirm: "Are you sure you want to delete this algorithm?" },
+        class: 'btn btn-warning' %>
+      <%= link_to "Back", algorithms_path, class: 'btn btn-default' %>
+    </div>
+  </div>
+</div>

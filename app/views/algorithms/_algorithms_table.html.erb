@@ -1,0 +1,17 @@
+<!-- Table -->
+<table class="table">
+  <thead>
+    <tr><th>Case</th><th>Name</th><th>Actions</th></tr>
+  </thead>
+  <tbody>
+    <%= content_tag_for(:tr, @algorithms) do |algorithm| %>
+      <td><%= image_tag algorithm.wazatar.url(:thumb) %></td>
+      <td><%= link_to algorithm.name, algorithm_path(algorithm) %></td>
+      <td>
+        <%= link_to 'Edit', edit_algorithm_path(algorithm) %> |
+        <%= link_to 'Delete', algorithm, method: :delete,
+            data: { confirm: "Are you sure you want to delete #{algorithm.name}?" } %>
+      </td>
+    <% end %>
+  </tbody>
+</table>

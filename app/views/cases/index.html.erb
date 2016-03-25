@@ -1,0 +1,27 @@
+<% content_for :nav do %>
+  <ul class="nav navbar-inverse navbar-nav">
+    <li class="nav-item">
+      <%= link_to 'OLLs', "#{cases_path}?filter=oll", class: 'nav-link' %>
+    </li>
+    <li class="nav-item">
+      <%= link_to 'PLLs', "#{cases_path}?filter=pll", class: 'nav-link' %>
+    </li>
+  </ul>
+<% end %>
+
+<% content_for :search do %>
+  <%= form_tag cases_path, class: 'navbar-form', method: :get do %>
+    <div class="input-group">
+      <%= text_field_tag :filter, @filter, class: 'form-control', placeholder: 'Search for. . . ' %>
+      <span class="input-group-btn">
+        <%= submit_tag "Go", class: 'btn btn-primary' %>
+      </span>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="card-block">
+  <%=
+    render partial: 'case_cards'
+  %>
+</div>

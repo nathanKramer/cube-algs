@@ -1,0 +1,19 @@
+<% @cases.in_groups_of(4) do |cases| %>
+  <div class="row">
+    <% cases.each do |c| %>
+      <div class="col-md-3">
+        <% if c %>
+          <div class="card">
+            <div class="center-block" style="text-align: center;">
+              <%= image_tag c.diagram, class: 'card-img-top' %>
+            </div>
+            <div class="card-block">
+              <p class="card-text"><%= c.nickname %></p>
+            </div>
+
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
