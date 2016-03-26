@@ -1,0 +1,26 @@
+<%= form_for @case do |f| %>
+  <% if @case.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@case.errors.count, "error") %> prohibited this case from being saved:</h2>
+      <ul>
+      <% @case.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <fieldset class="form-group">
+    <%= f.label :nickname %>
+    <%= f.text_field :nickname, class: 'form-control' %>
+  </fieldset>
+  <fieldset class="form-group">
+    <%= f.label :order_of_rotational_symmetry %>
+    <%= f.number_field :order_of_rotational_symmetry, class: 'form-control' %>
+  </fieldset>
+  <fieldset class="form-group">
+    <%= f.label :is_involutory %>
+    <%= f.check_box :is_involutory, class: 'form-control' %>
+  </fieldset>
+  <%= f.submit "Save", class: 'btn btn-success' %>
+  <%= link_to "Cancel", cases_path, class: 'btn btn-default' %>
+<% end %>

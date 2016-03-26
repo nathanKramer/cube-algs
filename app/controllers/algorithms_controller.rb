@@ -65,5 +65,6 @@ class AlgorithmsController < ApplicationController
   end
 
   def algorithm_params
+    params.require(:algorithm).permit([:algorithm, :description])
   end
 end

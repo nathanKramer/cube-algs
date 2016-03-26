@@ -10,9 +10,7 @@
 <body>
   <nav class="navbar navbar-dark bg-primary navbar-fixed-top">
     <div class="navbar-header">
-      <a class="navbar-brand" href="/cases">
-        <%= image_tag('favicon.png', width: 32, height: 32) %>
-      </a>
+      <%= link_to image_tag('favicon.png', width: 32, height: 32), cube_algs_home_path, class: 'navbar-brand' %>
     </div>
 
     <%= yield :nav %>
