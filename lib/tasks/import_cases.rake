@@ -9,7 +9,7 @@ task :import_cases => :environment do
   %w( oll pll ).each do |case_type|
     Dir[Rails.root.join("app/assets/images/#{case_type.pluralize}/*")].each do |image|
       diagram_url = case_type.pluralize + "/" + File.basename(image)
-      Case.create(case_type: case_type, diagram: diagram_url)
+      Case.create(case_type: case_type, diagram: diagram_url, order_of_rotational_symmetry: 4)
     end
   end
 
