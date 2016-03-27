@@ -10,9 +10,13 @@
 <body>
   <nav class="navbar navbar-dark bg-primary navbar-fixed-top">
     <div class="navbar-header">
-      <%= link_to image_tag('favicon.png', width: 32, height: 32), cube_algs_home_path, class: 'navbar-brand' %>
+      <%= link_to image_tag('favicon.png', width: 32, height: 32), cube_algs_home_path, class: 'navbar-brand active nav-item' %>
     </div>
-
+    <ul class="nav navbar-inverse navbar-nav">
+      <%= bootstrap_nav_link 'F2L', cases_f2l_path, class: 'nav-link' %>
+      <%= bootstrap_nav_link 'OLL', cases_oll_path, class: 'nav-link' %>
+      <%= bootstrap_nav_link 'PLL', cases_pll_path, class: 'nav-link' %>
+    </ul>
     <%= yield :nav %>
 
     <div class="col-sm-3 col-md-3 pull-md-right">

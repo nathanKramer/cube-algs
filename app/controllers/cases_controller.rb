@@ -11,6 +11,19 @@ class CasesController < ApplicationController
     end
   end
 
+
+  def f2l
+    filter_cases(Case.f2l)
+  end
+
+  def oll
+    filter_cases(Case.oll)
+  end
+
+  def pll
+    filter_cases(Case.pll)
+  end
+
   # PATCH / PUT
   # /cases/:id
   def update
@@ -30,24 +43,23 @@ class CasesController < ApplicationController
   def edit
   end
 
-  def find_case
+  def find_case()
     @case = Case.find(params[:id])
     if params[:reflection]
       @case.reflection = Case.find(params[:reflection])
     end
   end
 
-  def filter_cases
+  def filter_cases(scope=Case)
     @filter = params[:filter]
     if @filter
       filter = "%#{@filter}%"
-      @cases = Case.where(
-        '(case_type LIKE ?) or (nickname LIKE ?)',
-        filter,
+      @cases = scope.where(
+        '(nickname LIKE ?)',
         filter
       )
     else
-      @cases = Case.all
+      @cases = scope.all
     end
   end
 
