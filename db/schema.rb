@@ -15,12 +15,8 @@ ActiveRecord::Schema.define(version: 20160326060349) do
 
   create_table "algorithms", force: :cascade do |t|
     t.string   "algorithm"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
-    t.string   "wazatar_file_name"
-    t.string   "wazatar_content_type"
-    t.integer  "wazatar_file_size"
-    t.datetime "wazatar_updated_at"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.text     "description"
     t.integer  "case_id"
     t.integer  "angle"
