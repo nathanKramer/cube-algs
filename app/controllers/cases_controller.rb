@@ -45,7 +45,6 @@ class CasesController < ApplicationController
 
   def find_case()
     @case = Case.find(params[:id])
-    binding.pry
     if params[:reflection]
       @case.reflection = Case.find(params[:reflection])
     end
