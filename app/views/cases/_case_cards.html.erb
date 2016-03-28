@@ -9,6 +9,8 @@
             </div>
             <div class="card-block">
               <p class="card-text"><%= c.nickname %></p>
+              <p><%= c.algorithms.first ? c.algorithms.first.algorithm : "" %></p>
+              <p><%= c.algorithms.first ? c.algorithms.first.description : "" %></p>
             </div>
           </div>
         <% end %>

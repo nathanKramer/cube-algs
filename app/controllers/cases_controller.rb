@@ -44,10 +44,8 @@ class CasesController < ApplicationController
   end
 
   def find_case()
-    @case = Case.find(params[:id])
-    if params[:reflection]
-      @case.reflection = Case.find(params[:reflection])
-    end
+    cases = Case.where("id = #{params[:id]}").includes(:algorithms)
+    @case = cases.first
   end
 
   def filter_cases(scope=Case)
@@ -57,9 +55,9 @@ class CasesController < ApplicationController
       @cases = scope.where(
         '(nickname LIKE ?)',
         filter
-      )
+      ).includes(:algorithms)
     else
-      @cases = scope.all
+      @cases = scope.all.includes(:algorithms)
     end
   end
 
