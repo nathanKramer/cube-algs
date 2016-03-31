@@ -1,6 +1,6 @@
 <div class="card">
   <div class ="card-block" style="text-align: center;">
-    <h1 class="display-1 card-title">Cube Algs</h1>
+    <%= image_tag('logo.png', width: 500, class: 'card-image') %>
   </div>
 
   <div class="card-block">
@@ -11,7 +11,17 @@
         <div class="card">
           <div class="card-block" style="text-align: center;">
             <h4 class="card-title"><%= link_to 'F2L', cases_f2l_path %></h4>
-            <%= link_to image_tag('f2l.png', width: 200, class: 'card-image'), cases_f2l_path %>
+            <%= link_to(
+              image_tag(
+                'f2l-inactive.png',
+                width: 200,
+                class: 'card-image',
+                onmouseover: "this.src='assets/f2l-active.png'",
+                onmouseout: "this.src='assets/f2l-inactive.png'"
+              ),
+              cases_f2l_path
+            )
+            %>
           </div>
           <div class="card-block">
             <p class="card-text">Algorithms for solving the first 2 layers of the Cube</p>
@@ -20,7 +30,17 @@
         <div class="card">
           <div class="card-block" style="text-align: center;">
             <h4 class="card-title"><%= link_to 'OLL', cases_oll_path %></h4>
-            <%= link_to image_tag('oll.png', width: 200, class: 'card-image'), cases_oll_path %>
+            <%= link_to(
+              image_tag(
+                'oll-inactive.png',
+                width: 200,
+                class: 'card-image',
+                onmouseover: "this.src='/assets/oll-active.png'",
+                onmouseout: "this.src='/assets/oll-inactive.png'"
+              ),
+              cases_oll_path
+            )
+            %>
           </div>
           <div class="card-block">
             <p class="card-text">Algorithms for Orienting the last layer of the Cube</p>
@@ -29,7 +49,17 @@
         <div class="card">
           <div class="card-block" style="text-align: center;">
             <h4 class="card-title"><%= link_to 'PLL', cases_pll_path %></h4>
-            <%= link_to image_tag('pll.jpg', width: 200, class: 'card-image'), cases_pll_path %>
+            <%= link_to(
+              image_tag(
+                'pll-inactive.png',
+                width: 200,
+                class: 'card-image',
+                onmouseover: "this.src='/assets/pll-active.png'",
+                onmouseout: "this.src='/assets/pll-inactive.png'"
+              ),
+              cases_pll_path
+            )
+            %>
           </div>
           <div class="card-block">
             <p class="card-text">Algorithms for solving the cube after the OLL step is completed</p>
