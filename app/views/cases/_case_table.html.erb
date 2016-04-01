@@ -1,8 +1,8 @@
-<table class="table">
+<table class="table cases-table">
   <thead>
     <tr>
       <th>Diagram</th>
-      <th>Algorithm</th>
+      <th>Suggested Algorithm</th>
       <th>Notes</th>
     </tr>
   </thead>
@@ -10,10 +10,10 @@
     <% @cases.each do |c| %>
       <tr>
         <td>
-          <%= link_to image_tag(c.diagram, class: 'card-img-top'), case_path(c) %>
+          <%= link_to image_tag(c.diagram, class: 'card-img-top case-diagram', width: '64px'), case_path(c) %>
         </td>
         <td>
-          <%= c.algorithm %>
+          <span class="algorithm-text"><%= c.algorithm %></span>
         </td>
         <td>
           <%= c.algorithm_notes %>

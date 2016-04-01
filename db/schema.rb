@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160401084547) do
+ActiveRecord::Schema.define(version: 20160401101943) do
 
   create_table "algorithms", force: :cascade do |t|
     t.string   "algorithm"
@@ -34,12 +34,12 @@ ActiveRecord::Schema.define(version: 20160401084547) do
     t.integer  "order_of_rotational_symmetry", null: false
     t.integer  "case_a_id"
     t.integer  "case_b_id"
-    t.integer  "category_id"
     t.string   "algorithm"
     t.string   "algorithm_notes"
+    t.integer  "category_name_id"
   end
 
-  add_index "cases", ["category_id"], name: "index_cases_on_category_id"
+  add_index "cases", ["category_name_id"], name: "index_cases_on_category_name_id"
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"

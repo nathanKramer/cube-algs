@@ -3,7 +3,7 @@
     <div class="card">
       <div class="card-block" style="text-align: center;">
         <h3>No Rotation</h3>
-        <%= link_to image_tag(@case.diagram, class: 'card-img-top angle_unrotated'), case_path(@case) %>
+        <%= link_to image_tag(@case.diagram, class: 'card-img-top angle_unrotated', width: 100), case_path(@case) %>
       </div>
       <div class="card-block">
         <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#new_algorithm">+</button>
@@ -27,7 +27,7 @@
       <div class="card">
         <div class="card-block" style="text-align: center;">
           <h3>90&deg;</h3>
-          <%= link_to image_tag(@case.diagram, class: 'card-img-top angle_90_degrees'), case_path(@case) %>
+          <%= link_to image_tag(@case.diagram, class: 'card-img-top angle_90_degrees', width: 100), case_path(@case) %>
         </div>
         <div class="card-block">
           <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#new_algorithm">+</button>
@@ -38,7 +38,7 @@
       <div class="card">
         <div class="card-block" style="text-align: center;">
           <h3>180&deg;</h3>
-          <%= link_to image_tag(@case.diagram, class: 'card-img-top angle_180_degrees'), case_path(@case) %>
+          <%= link_to image_tag(@case.diagram, class: 'card-img-top angle_180_degrees', width: 100), case_path(@case) %>
         </div>
       </div>
     <% end %>
@@ -46,7 +46,7 @@
       <div class="card">
         <div class="card-block" style="text-align: center;">
           <h3>270&deg;</h3>
-          <%= link_to image_tag(@case.diagram, class: 'card-img-top angle_270_degrees'), case_path(@case) %>
+          <%= link_to image_tag(@case.diagram, class: 'card-img-top angle_270_degrees', width: 100), case_path(@case) %>
         </div>
       </div>
     <% end %>
