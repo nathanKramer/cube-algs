@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160328041343) do
+ActiveRecord::Schema.define(version: 20160401080835) do
 
   create_table "algorithms", force: :cascade do |t|
     t.string   "algorithm"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20160328041343) do
     t.integer  "case_a_id"
     t.integer  "case_b_id"
     t.integer  "category_id"
+    t.string   "algorithm"
   end
 
   add_index "cases", ["category_id"], name: "index_cases_on_category_id"
