@@ -1,0 +1,79 @@
+case_type,diagram,nickname,order_of_rotational_symmetry,algorithm
+oll,olls/oll1.gif,dot,2,(R U2 R') (R' F R F') U2 (R' F R F')
+oll,olls/oll2.gif,dot,4,[F (R U R' U') F' ] [f (R U R' U') f']
+oll,olls/oll3.gif,,4,[f (R U R' U') f'] U [F (R U R' U') F' ]
+oll,olls/oll4.gif,,4,[f (R U R' U') f'] U' [F (R U R' U') F' ]
+oll,olls/oll5.gif,,4,(R U R' U) (R' F R F') U2 (R' F R F')
+oll,olls/oll6.gif,,4,[F (R U R' U) F'] y' U2 (R' F R F')
+oll,olls/oll7.gif,,4,M U (R U R' U') M' (R' F R F')
+oll,olls/oll8.gif,checkerboard,1,M U (R U R' U') M2 (U R U' r')
+oll,olls/oll9.gif,line,2,R' U2 R2 U R' U R U2 x' U' R' U
+oll,olls/oll10.gif,line,2,F (R U R' U') R F' (r U R' U') r'
+oll,olls/oll11.gif,line,4,[F (R U R' U') F' ] [f (R U R' U') f']
+oll,olls/oll12.gif,line,4,(R U R' U) R d' R U' R' F'
+oll,olls/oll13.gif,right angle,4,(r U R' U) (R U' R' U) R U2' r'
+oll,olls/oll14.gif,right angle,4,(l' U' L U') (L' U L U') L' U2 l
+oll,olls/oll15.gif,right angle,4,(R' F R' F') R2 U2 y (R' F R F')
+oll,olls/oll16.gif,right angle,4,R' F R2 B' R2' F' R2 B R'
+oll,olls/oll17.gif,right angle,4,F (R U R' U') (R U R' U') F'
+oll,olls/oll18.gif,right angle,4,F' (L' U' L U) (L' U' L U) F
+oll,olls/oll19.gif,tetris,4,(r U R' U) R U2 r'
+oll,olls/oll20.gif,tetris,4,r' U' R U' R' U2 r
+oll,olls/oll21.gif,tetris,4,[F (R U R' U') F'] U [F (R U R' U') F' ]
+oll,olls/oll22.gif,tetris,4,[F' (L' U' L U) F] y [F (R U R' U') F']
+oll,olls/oll23.gif,,4,(R U R' U') R' F R2 U R' U' F'
+oll,olls/oll24.gif,,4,(R U R' U) (R' F R F') R U2 R'
+oll,olls/oll25.gif,block,4,r' U2 (R U R' U) r
+oll,olls/oll26.gif,block,4,r U2 R' U' R U' r'
+oll,olls/oll27.gif,,4,F U R U' R2 F' R (U R U' R')
+oll,olls/oll28.gif,,4,R' F R U R' F' R y' (R U' R')
+oll,olls/oll29.gif,,4,(r U r') (R U R' U') (r U' r')
+oll,olls/oll30.gif,,4,(l' U' l) (L' U' L U) (l' U l)
+oll,olls/oll31.gif,,4,[(R U R' U) R U2 R'] [F (R U R' U') F']
+oll,olls/oll32.gif,,4,(R' F R F') (R' F R F') (R U R' U') (R U R')
+oll,olls/oll33.gif,,4,(R2 U R' B' R) U' (R2 U R B R')
+oll,olls/oll34.gif,,4,(R U R' U') R U' R' F' U' F (R U R')
+oll,olls/oll35.gif,,4,R U B' U' R' U R B R'
+oll,olls/oll36.gif,,4,R' U' F U R U' R' F' R
+oll,olls/oll37.gif,,4,F R U' R' U' R U R' F'
+oll,olls/oll38.gif,,4,f (R U R' U') f'
+oll,olls/oll39.gif,,4,f' (L' U' L U) f
+oll,olls/oll40.gif,,4,(R U2 R') (R' F R F') U2 (R' F R F')
+oll,olls/oll41.gif,t,4,F (R U R' U') F'
+oll,olls/oll42.gif,t,4,(R U R' U') (R' F R F')
+oll,olls/oll43.gif,,4,R B' R' U' R U B U' R'
+oll,olls/oll44.gif,,4,R' [F (R U R' U') F'] U R
+oll,olls/oll45.gif,,4,(R U R2 U') (R' F) (R U) (R U') F'
+oll,olls/oll46.gif,,4,R' U' (R' F R F') U R
+oll,olls/oll47.gif,w,4,(R U R' U) (R U' R' U') (R' F R F')
+oll,olls/oll48.gif,w,4,(L' U' L U') (L' U L U) (L F' L' F)
+oll,olls/oll49.gif,,2,F (R U R' U') (R U R' U') (R U R' U') F'
+oll,olls/oll50.gif,,4,R U2' R2' U' R2 U' R2' U2 R
+oll,olls/oll51.gif,,4,R2 [D (R' U2) R] [D' (R' U2) R']
+oll,olls/oll52.gif,,4,(r U R' U') (r' F R F')
+oll,olls/oll53.gif,,4,F' (r U R' U') (r' F R )
+oll,olls/oll54.gif,sune,4,R U2 R' U' R U' R'
+oll,olls/oll55.gif,sune,4,(R U R' U) R U2 R'
+oll,olls/oll56.gif,,4,M' U M U2 M' U M
+oll,olls/oll57.gif,h,2,(R U R' U') M' (U R U' r')
+pll,plls/pll1.gif,,4,
+pll,plls/pll2.gif,,4,
+pll,plls/pll3.gif,,4,
+pll,plls/pll4.gif,,4,
+pll,plls/pll5.gif,,4,
+pll,plls/pll6.gif,,4,
+pll,plls/pll7.gif,,4,
+pll,plls/pll8.gif,,4,
+pll,plls/pll9.gif,,4,
+pll,plls/pll10.gif,,4,
+pll,plls/pll11.gif,,4,
+pll,plls/pll12.gif,,4,
+pll,plls/pll13.gif,,4,
+pll,plls/pll14.gif,,4,
+pll,plls/pll15.gif,,4,
+pll,plls/pll16.gif,,4,
+pll,plls/pll17.gif,,4,
+pll,plls/pll18.gif,,4,
+pll,plls/pll19.gif,,4,
+pll,plls/pll20.gif,,4,
+pll,plls/pll21.gif,,4,

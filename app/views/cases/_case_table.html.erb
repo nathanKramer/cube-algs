@@ -12,16 +12,12 @@
         <td>
           <%= link_to image_tag(c.diagram, class: 'card-img-top'), case_path(c) %>
         </td>
-        <% if c.algorithms.first %>
         <td>
-          <%= c.algorithms.first.algorithm %>
+          <%= c.algorithm %>
         </td>
         <td>
-          <%= c.algorithms.first.description %>
+          <%= c.algorithm_notes %>
         </td>
-        <% else %>
-          <td colspan="2"></td>
-        <% end %>
       </tr>
     <% end %>
   </tbody>
