@@ -10,7 +10,7 @@
     <% @cases.each do |c| %>
       <tr>
         <td>
-          <%= link_to image_tag(c.diagram, class: 'card-img-top case-diagram', width: '64px'), case_path(c) %>
+          <%= link_to image_tag(c.diagram, class: 'card-img-top case-diagram', width: '64px', height: '64px'), case_path(c) %>
         </td>
         <td>
           <span class="algorithm-text"><%= c.algorithm %></span>
