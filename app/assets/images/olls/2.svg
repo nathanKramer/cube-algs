@@ -13,6 +13,10 @@
 <rect x="66.6" y="4.2" class="st2" width="18.1" height="5.1"/>
 <path class="st1" d="M127.8,0h-26.5v13.5h26.5V0z M105.4,9.2V4.1h18.1v5.1H105.4z"/>
 <rect x="105.4" y="4.2" class="st2" width="18.1" height="5.1"/>
+<path class="st1" d="M88.8,137.7H62.3v13.5h26.5V137.7z M66.6,146.9v-5.1h18.1v5.1H66.6z"/>
+<rect x="66.6" y="141.9" class="st2" width="18.1" height="5.1"/>
+<path class="st1" d="M127.8,137.7h-26.5v13.5h26.5V137.7z M105.4,146.9v-5.1h18.1v5.1H105.4z"/>
+<rect x="105.4" y="141.9" class="st2" width="18.1" height="5.1"/>
 <path class="st1" d="M151.3,88.7V62.2h-13.5v26.5H151.3z M141.9,66.4h5.1v18.1h-5.1V66.4z"/>
 <rect x="141.9" y="66.4" class="st2" width="5.1" height="18.1"/>
 <path class="st1" d="M13.4,50.1V23.6H-0.1v26.5H13.4z M4.3,27.8h5.1v18.1H4.3V27.8z"/>
