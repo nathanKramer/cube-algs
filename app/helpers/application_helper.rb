@@ -13,7 +13,7 @@ module ApplicationHelper
       class_name << " #{options[:class]}"
     end
 
-    content_tag(:li, :class => "nav-item") do
+    content_tag(:span) do
       link_to link_label, link_target, class: class_name
     end
   end

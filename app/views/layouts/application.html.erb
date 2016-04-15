@@ -2,28 +2,40 @@
 <html>
 <head>
   <title>Cube Algs</title>
-  <%= favicon_link_tag 'favicon.png' %>
+  <%= favicon_link_tag 'favicon.ico' %>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <nav class="navbar navbar-dark bg-primary navbar-fixed-top">
-    <div class="navbar-header">
-      <%= link_to image_tag('favicon.png', width: 32, height: 32), cube_algs_home_path, class: 'navbar-brand active nav-item' %>
-    </div>
-    <ul class="nav navbar-inverse navbar-nav">
-      <%= bootstrap_nav_link 'F2L', cases_f2l_path, class: 'nav-link' %>
-      <%= bootstrap_nav_link 'OLL', cases_oll_path, class: 'nav-link' %>
-      <%= bootstrap_nav_link 'PLL', cases_pll_path, class: 'nav-link' %>
-    </ul>
-    <%= yield :nav %>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header navbar-default nav-home col-md-2">
+        <a href="<%=cube_algs_home_path%>" class="navbar-brand active nav-item">
+          <%= image_tag('branding/mini-logo.png', width: 120) %>
+        </a>
+      </div>
+      <div class="col-md-10">
+        <div class="nav navbar-nav">
+          <div class="nav-item col-md-1">
+            <%= bootstrap_nav_link image_tag('nav-f2l.png', width: 48), cases_f2l_path, class: 'nav-link' %>
+          </div>
+          <div class="nav-item col-md-1">
+            <%= bootstrap_nav_link image_tag('nav-oll.png', width: 48), cases_oll_path, class: 'nav-link' %>
+          </div>
+          <div class="nav-item col-md-1">
+            <%= bootstrap_nav_link image_tag('nav-pll.png', width: 48), cases_pll_path, class: 'nav-link' %>
+          </div>
+        </div>
+        <%= yield :nav %>
 
-    <div class="col-sm-3 col-md-3 pull-md-right">
-      <%= yield :search %>
+        <div class="col-sm-3 col-md-3 pull-md-right">
+          <%= yield :search %>
+        </div>
+      </div>
     </div>
   </nav>
-  <div class="container">
+  <div class="container-fluid">
     <%= yield %>
   </div>
 </body>

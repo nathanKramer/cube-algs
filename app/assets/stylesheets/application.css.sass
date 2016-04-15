@@ -1,6 +1,51 @@
-
 @import "bootstrap"
+@import "styles/bootstrap_customizations.sass"
 @import "styles/cube_algs.scss"
+
+nav.navbar-default
+  border-bottom: 8px solid #000
+
+div.centered-text
+  text-align: center
+
+div.grid-box
+  padding-top: 16px
+  padding-bottom: 16px
+
+div.bordered-right
+  border-right-width: 8px
+  border-right-color: #000
+  border-right-style: solid
+div.bordered-left
+  border-left-width: 8px
+  border-left-color: #000
+  border-left-style: solid
+div.bordered-top
+  border-top-width: 8px
+  border-top-color: #000
+  border-top-style: solid
+div.bordered-bottom
+  border-bottom-width: 8px
+  border-bottom-color: #000
+  border-bottom-style: solid
+
+div.main-logo-div
+  margin-top: 64px
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus
+
+.inner
+  position: absolute
+  top: 50%
+  left: 50%
+
+.vertical-text
+  transform:  translateX(-50%) translateY(-50%) rotate(-90deg)
 
 .angle_90_degrees
   -webkit-transform: rotate(90deg)
