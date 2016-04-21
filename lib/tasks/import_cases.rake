@@ -1,10 +1,10 @@
 require 'csv'
 
 desc 'Import cases based on diagrams'
-task :import_cases => :environment do
-  puts "WARNING: this will reset all cases"
-  print "Are you sure you want to continue? [y/N] "
-  abort("Aborting...") unless $stdin.gets.downcase.chomp == 'y'
+task import_cases: :environment do
+  puts 'WARNING: this will reset all cases'
+  print 'Are you sure you want to continue? [y/N] '
+  abort('Aborting...') unless $stdin.gets.downcase.chomp == 'y'
 
   Case.delete_all
 
@@ -18,7 +18,7 @@ task :import_cases => :environment do
 
   # Import from CSV...
   csv_text = File.read('data/import_cases.csv')
-  csv = CSV.parse(csv_text, :headers => true)
+  csv = CSV.parse(csv_text, headers: true)
   csv.each do |row|
     Case.create!(row.to_hash)
   end

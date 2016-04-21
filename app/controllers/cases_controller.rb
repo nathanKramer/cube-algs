@@ -11,7 +11,6 @@ class CasesController < ApplicationController
     end
   end
 
-
   def f2l
     filter_cases(Case.f2l)
   end
@@ -43,12 +42,12 @@ class CasesController < ApplicationController
   def edit
   end
 
-  def find_case()
+  def find_case
     cases = Case.where("id = #{params[:id]}").includes(:algorithms)
     @case = cases.first
   end
 
-  def filter_cases(scope=Case)
+  def filter_cases(scope = Case)
     @filter = params[:filter]
     if @filter
       filter = "%#{@filter}%"

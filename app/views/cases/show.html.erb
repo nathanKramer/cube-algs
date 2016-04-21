@@ -1,58 +1,21 @@
 <div class="card-deck-wrapper">
   <div class="card-deck">
-    <div class="card">
-      <div class="card-block" style="text-align: center;">
-        <h3>No Rotation</h3>
-        <%= link_to image_tag(@case.diagram, class: 'card-img-top angle_unrotated', width: 100), case_path(@case) %>
-      </div>
-      <div class="card-block">
-        <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#new_algorithm">+</button>
-      </div>
-      <ul class="list-group">
-        <li class="list-group-item">
-          <span class="label label-default label-pill pull-xs-right">14</span>
-          Test Alg Here
-        </li>
-        <li class="list-group-item">
-          <span class="label label-default label-pill pull-xs-right">2</span>
-          Dapibus ac facilisis in
-        </li>
-        <li class="list-group-item">
-          <span class="label label-default label-pill pull-xs-right">1</span>
-          Morbi leo risus
-        </li>
-      </ul>
-    </div>
+
+    <!-- "0" rotation -->
+    <%= render partial: 'case_angle_card', locals: { :degrees => 'none' } %>
+
     <% if @case.order_of_rotational_symmetry >= 2 %>
-      <div class="card">
-        <div class="card-block" style="text-align: center;">
-          <h3>90&deg;</h3>
-          <%= link_to image_tag(@case.diagram, class: 'card-img-top angle_90_degrees', width: 100), case_path(@case) %>
-        </div>
-        <div class="card-block">
-          <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#new_algorithm">+</button>
-        </div>
-      </div>
+      <%= render partial: 'case_angle_card', locals: { :degrees => '90' } %>
     <% end %>
     <% if @case.order_of_rotational_symmetry == 4 %>
-      <div class="card">
-        <div class="card-block" style="text-align: center;">
-          <h3>180&deg;</h3>
-          <%= link_to image_tag(@case.diagram, class: 'card-img-top angle_180_degrees', width: 100), case_path(@case) %>
-        </div>
-      </div>
+      <%= render partial: 'case_angle_card', locals: { :degrees => '180' } %>
     <% end %>
     <% if @case.order_of_rotational_symmetry == 4 %>
-      <div class="card">
-        <div class="card-block" style="text-align: center;">
-          <h3>270&deg;</h3>
-          <%= link_to image_tag(@case.diagram, class: 'card-img-top angle_270_degrees', width: 100), case_path(@case) %>
-        </div>
-      </div>
+      <%= render partial: 'case_angle_card', locals: { :degrees => '270' } %>
     <% end %>
   </div>
 </div>
 <div class="card card-block">
-  <%= link_to 'Edit', edit_case_path, class: 'btn btn-primary' %>
+  <%= link_to 'Edit', edit_case_path, class: 'btn btn-default' %>
 </div>
 <%= render :partial => 'new_algorithm_modal' %>

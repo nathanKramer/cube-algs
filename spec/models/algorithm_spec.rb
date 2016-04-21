@@ -14,13 +14,13 @@ RSpec.describe Algorithm, type: :model do
       expect(algorithm.errors[:name]).to be_present
     end
 
-    it "can be an ordinary name" do
+    it 'can be an ordinary name' do
       algorithm = Algorithm.new(name: 'Joe')
       algorithm.validate
       expect(algorithm.errors[:name]).not_to be_present
     end
 
-    it "has to be a unique name" do
+    it 'has to be a unique name' do
       Algorithm.create(name: 'Gandalf')
       algorithm = Algorithm.new(name: 'Gandalf')
       algorithm.validate
