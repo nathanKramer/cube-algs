@@ -1,0 +1,18 @@
+<div class="card">
+  <div class="card-block" style="text-align: center;">
+    <!-- Work out some vars -->
+    <% rotation_class = "angle_#{degrees}" %>
+
+    <!-- Header -->
+    <% if degrees == 'none' %>
+      <h3>No Rotation</h3>
+    <% else %>
+      <h3><%= "#{degrees}" %>&deg;</h3>
+    <% end %>
+
+    <%= link_to image_tag(@case.diagram, class: "card-img-top #{rotation_class}", width: 100), case_path(@case) %>
+  </div>
+  <div class="card-block" style="text-align: center;">
+    <button class="btn btn-default" type="button" data-toggle="modal" data-target="#new_algorithm">Add New</button>
+  </div>
+</div>

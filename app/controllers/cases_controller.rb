@@ -61,6 +61,13 @@ class CasesController < ApplicationController
   end
 
   def case_params
-    params.require(:case).permit([:nickname, :reflection, :order_of_rotational_symmetry, :is_involutory])
+    params.require(:case).permit(
+      [
+        :nickname,
+        :reflection,
+        :order_of_rotational_symmetry,
+        :is_involutory
+      ]
+    )
   end
 end

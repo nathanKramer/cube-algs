@@ -1,0 +1,25 @@
+<div class="row">
+  <%
+    img_inactive = "home/#{step}.png"
+    img_active = "home/#{step}-active.png"
+    label = step.upcase
+  %>
+  <!-- Image/Link to step page -->
+  <div class="col-md-12 centered-text grid-box">
+    <%= link_to(
+      image_tag(
+        img_inactive,
+        width: 180,
+        class: 'card-image img-responsive',
+        onmouseover: "this.src='#{image_path img_active}'",
+        onmouseout: "this.src='#{image_path img_inactive}'"
+      ),
+      "cases_#{step}".to_sym
+    )
+    %>
+  </div>
+</div>
+<div class="row bordered-top">
+  <!-- Step label / any additional info -->
+  <div class="col-md-12"><h1><%= label %></h1></div>
+</div>
