@@ -1,7 +1,7 @@
 <% content_for :search do %>
   <%= form_tag algorithms_path, class: 'navbar-form', method: :get do %>
     <div class="input-group">
-      <%= text_field_tag :filter, @filter, class: 'form-control', placeholder: 'Search for. . . ' %>
+      <%= text_field_tag :filter, @filter, name: 'Search', class: 'form-control', placeholder: 'Search for. . . ' %>
       <span class="input-group-btn">
         <%= submit_tag "Go", class: 'btn btn-primary' %>
       </span>

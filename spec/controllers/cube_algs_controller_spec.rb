@@ -14,32 +14,4 @@ RSpec.describe CubeAlgsController, type: :controller do
       expect(response).to have_http_status(:success)
     end
   end
-
-  describe 'GET #cross' do
-    it 'returns http success' do
-      get :cross
-      expect(response).to have_http_status(:success)
-    end
-  end
-
-  describe 'GET #f2l' do
-    it 'returns http success' do
-      get :f2l
-      expect(response).to have_http_status(:success)
-    end
-  end
-
-  describe 'GET #oll' do
-    it 'returns http success' do
-      get :oll
-      expect(response).to have_http_status(:success)
-    end
-  end
-
-  describe 'GET #pll' do
-    it 'returns http success' do
-      get :pll
-      expect(response).to have_http_status(:success)
-    end
-  end
 end

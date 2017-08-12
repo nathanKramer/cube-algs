@@ -1,5 +1,5 @@
-CREATE TEMP TABLE CasesTemp(case_type,diagram,nickname,created_at,updated_at,is_involutory,order_of_rotational_symmetry,case_a_id,case_b_id);
+CREATE TEMP TABLE CasesTemp(case_type,diagram,nickname,order_of_rotational_symmetry);
 .separator ,
-.import import_cases.csv CasesTemp
-INSERT INTO Cases(case_type,diagram,nickname,created_at,updated_at,is_involutory,order_of_rotational_symmetry,case_a_id,case_b_id) SELECT * FROM CasesTemp;
+.import data/import_cases.csv CasesTemp
+INSERT INTO Cases(case_type,diagram,nickname,order_of_rotational_symmetry, created_at,updated_at) SELECT *, datetime('now'), datetime('now') FROM CasesTemp;
 DROP TABLE CasesTemp;

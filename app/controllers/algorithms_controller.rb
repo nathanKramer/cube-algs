@@ -58,7 +58,7 @@ class AlgorithmsController < ApplicationController
   def search_algorithms
     @search = params[:search]
     if @search
-      @algorithms = Algorithm.where('LOWER(name) LIKE LOWER(?)', "%#{@search}%")
+      @algorithms = Algorithm.where('LOWER(algorithm) LIKE LOWER(?)', "%#{@search}%")
     else
       @algorithms = Algorithm.all
     end

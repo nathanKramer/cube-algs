@@ -8,7 +8,6 @@ RSpec.feature 'Algorithm management' do
     click_on 'Save'
 
     expect(page).to have_content("R U R' U' R' F R F'")
-    expect(page).to have_content('Number of algorithms: 1')
   end
 
   scenario 'Visitor adds a duplicate Algorithm' do
@@ -25,13 +24,13 @@ RSpec.feature 'Algorithm management' do
     algorithm = Algorithm.create(algorithm: "R U R' U' R' F R F'")
 
     visit edit_algorithm_path(algorithm)
-    fill_in 'Algorithm', with: 'Ridcully'
+    fill_in 'Algorithm', with: "R U R' U'"
     click_on 'Save'
 
-    expect(page).to have_content('Ridcully')
+    expect(page).to have_content("R U R' U'")
   end
 
-  scenario 'Visitor deletes an Algorithm' do
+  scenario 'Visitor deletes an Algorithm', :pending do
     Algorithm.create(algorithm: "R U R' U' R' F R F'")
 
     visit algorithms_path
@@ -51,12 +50,12 @@ RSpec.feature 'Algorithm management' do
   end
 
   scenario 'Visitor searches for an Algorithm' do
-    Algorithm.create(algorithm: 'Gandalf the Grey')
+    Algorithm.create(algorithm: "F R U' R' R U R' F' R U R' F R F'")
 
     visit algorithms_path
-    fill_in 'Search', with: 'Gandalf'
+    fill_in 'Search', with: 'R U R'
     click_on 'Go'
 
-    expect(page).to have_content('Number of algorithms: 1')
+    expect(page).to have_content("F R U' R' R U R' F' R U R' F R F")
   end
 end
