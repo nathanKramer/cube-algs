@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170813070038) do
+ActiveRecord::Schema.define(version: 20170813071432) do
 
   create_table "algorithms", force: :cascade do |t|
     t.string   "algorithm"
@@ -20,9 +20,11 @@ ActiveRecord::Schema.define(version: 20170813070038) do
     t.text     "description"
     t.integer  "case_id"
     t.integer  "angle"
+    t.integer  "case_number"
   end
 
   add_index "algorithms", ["algorithm"], name: "index_algorithms_on_algorithm", unique: true
+  add_index "algorithms", ["case_number"], name: "index_algorithms_on_case_number"
 
   create_table "cases", force: :cascade do |t|
     t.string   "case_type"
