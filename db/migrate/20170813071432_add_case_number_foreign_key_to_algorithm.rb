@@ -6,7 +6,8 @@ class AddCaseNumberForeignKeyToAlgorithm < ActiveRecord::Migration
   end
 
   def down
-    # remove_foreign_key :algorithms, column: :case_number
-    # remove_column :algorithms, :case_number
+    remove_foreign_key :algorithms, column: :case_number
+    remove_index :algorithms, column: :case_number
+    remove_column :algorithms, :case_number
   end
 end
