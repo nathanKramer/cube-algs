@@ -5,10 +5,4 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-ActiveRecord::Base.connection.execute <<-SQL
-CREATE TEMP TABLE CasesTemp(case_type,diagram,nickname,order_of_rotational_symmetry);
-.separator ,
-.import data/import_cases.csv CasesTemp
-INSERT INTO Cases(case_type,diagram,nickname,order_of_rotational_symmetry, created_at,updated_at) SELECT *, datetime('now'), datetime('now') FROM CasesTemp;
-DROP TABLE CasesTemp;
-SQL
+%x( bundle exec rails db < data/import_cases.sql )

@@ -27,7 +27,7 @@ class CasesController < ApplicationController
   # /cases/:id
   def update
     if @case.update(case_params)
-      redirect_to cases_path
+      redirect_to "/#{@case.case_type}"
     else
       render :edit
     end
