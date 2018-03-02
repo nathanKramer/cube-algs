@@ -1,21 +1,21 @@
-<div class="card-deck-wrapper">
-  <div class="card-deck">
-
-    <!-- "0" rotation -->
-    <%= render partial: 'case_angle_card', locals: { :degrees => 'none' } %>
-
-    <% if @case.order_of_rotational_symmetry >= 2 %>
-      <%= render partial: 'case_angle_card', locals: { :degrees => '90' } %>
-    <% end %>
-    <% if @case.order_of_rotational_symmetry == 4 %>
-      <%= render partial: 'case_angle_card', locals: { :degrees => '180' } %>
-    <% end %>
-    <% if @case.order_of_rotational_symmetry == 4 %>
-      <%= render partial: 'case_angle_card', locals: { :degrees => '270' } %>
-    <% end %>
-  </div>
-</div>
 <div class="card card-block">
   <%= link_to 'Edit', edit_case_path, class: 'btn btn-default' %>
 </div>
 <%= render :partial => 'new_algorithm_modal' %>
+
+<table class="table case-table">
+  <thead>
+    <tr>
+      <th>No rotation</th>
+      <% if @case.order_of_rotational_symmetry >= 2 %>
+        <th>90deg</th>
+      <% end %>
+      <% if @case.order_of_rotational_symmetry == 4 %>
+        <th>180deg</th>
+        <th>270deg</th>
+      <% end %>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
