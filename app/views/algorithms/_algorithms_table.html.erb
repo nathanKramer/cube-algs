@@ -1,16 +1,13 @@
 <!-- Table -->
 <table class="table">
   <thead>
-    <tr><th>Alg</th><th>Actions</th></tr>
+    <tr><th>Alg</th></tr>
   </thead>
   <tbody>
-    <%= content_tag_for(:tr, @algorithms) do |algorithm| %>
-      <td><%= link_to algorithm.algorithm, algorithm_path(algorithm) %></td>
-      <td>
-        <%= link_to 'Edit', edit_algorithm_path(algorithm) %> |
-        <%= link_to 'Delete', algorithm, method: :delete,
-            data: { confirm: "Are you sure you want to delete #{algorithm.algorithm}?" } %>
-      </td>
+    <% algorithms && algorithms.each do |algorithm| %>
+      <tr>
+        <td><%= link_to algorithm.algorithm, algorithm_path(algorithm) %></td>
+      </tr>
     <% end %>
   </tbody>
 </table>

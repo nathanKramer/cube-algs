@@ -19,7 +19,8 @@ task import_cases: :environment do
       Algorithm.create!(
         case: c,
         algorithm: row_hash[:algorithm],
-        description: row_hash[:algorithm_notes]
+        description: row_hash[:algorithm_notes],
+        angle: '0'
       )
     end
   end
