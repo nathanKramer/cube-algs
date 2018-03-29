@@ -2,4 +2,7 @@
 <th>
   <%= link_to image_tag(@case.diagram, class: "card-img-top #{rotation_class}"), case_path(@case) %>
   <%= content_tag :h2, rotation_label(degrees) %>
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#new_algorithm" aria-label="Add algorithm">
+  +
+</button>
 </th>

@@ -1,30 +1,10 @@
 <div class="card card-block">
   <%= link_to 'Edit', edit_case_path, class: 'btn btn-default' %>
 </div>
-<%= render partial: 'new_algorithm_modal' %>
 
+<%= render partial: 'new_algorithm_modal' %>
 <div class="container">
   <div class="row">
-    <% @case.angles.each do |angle| %>
-    <div class="col-md-3">
-      <table class="table">
-        <thead>
-          <tr>
-            <%= render partial: 'case_angle_header', locals: { degrees: angle } %>
-          </tr>
-        </thead>
-        <tbody>
-          <% @case.algorithms.for_angle(angle) && @case.algorithms.for_angle(angle).each do |algorithm| %>
-            <tr>
-              <td><%= link_to algorithm.algorithm, algorithm_path(algorithm) %></td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-    </div>
-    <% end %>
+    <%= render partial: 'algorithms_for_case_and_angle' %>
   </div>
 </div>
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#new_algorithm" aria-label="Add algorithm">
-  Add Algorithm
-</button>
