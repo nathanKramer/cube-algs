@@ -1,0 +1,5 @@
+<% rotation_class = "angle_#{degrees}" %>
+<th>
+  <%= content_tag :h2, rotation_label(degrees) %>
+  <%= link_to image_tag(@case.diagram, class: "card-img-top #{rotation_class}"), case_path(@case) %>
+</th>
