@@ -196,7 +196,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bootstrap (~> 4.0.0.alpha3)
+  bootstrap (~> 4.0)
   capybara
   jquery-rails
   paperclip (~> 5.2.0)
@@ -215,4 +215,4 @@ RUBY VERSION
    ruby 2.2.3p173
 
 BUNDLED WITH
-   1.16.0
+   1.16.1

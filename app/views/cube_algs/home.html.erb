@@ -1,6 +1,6 @@
 <div class="card">
-  <div class ="card-block" style="text-align: center;">
-    <%= image_tag('branding/logo.png', width: 500, class: 'card-image') %>
+  <div class="card-block main-logo">
+    <%= image_tag('branding/logo.png', class: 'card-image') %>
   </div>
 
   <div class="card-block">
@@ -8,27 +8,27 @@
       <div class="card-deck">
 
         <!-- F2L -->
-        <div class="card">
-          <div class="card-block" style="text-align: center;">
+        <div class="card tutorial-step-card">
+          <div class="card-body" style="text-align: center;">
             <%= render partial: 'step_image_and_link', locals: { step: 'f2l' } %>
           </div>
-          <div class="card-block">
+          <div class="card-body">
             <p class="card-text">Algorithms for solving the first 2 layers of the Cube</p>
           </div>
         </div>
-        <div class="card">
-          <div class="card-block" style="text-align: center;">
+        <div class="card tutorial-step-card">
+          <div class="card-body" style="text-align: center;">
             <%= render partial: 'step_image_and_link', locals: { step: 'oll' } %>
           </div>
-          <div class="card-block">
+          <div class="card-body">
             <p class="card-text">Algorithms for Orienting the last layer of the Cube</p>
           </div>
         </div>
-        <div class="card">
-          <div class="card-block" style="text-align: center;">
+        <div class="card tutorial-step-card">
+          <div class="card-body" style="text-align: center;">
             <%= render partial: 'step_image_and_link', locals: { step: 'pll' } %>
           </div>
-          <div class="card-block">
+          <div class="card-body">
             <p class="card-text">Algorithms for solving the cube after the OLL step is completed</p>
           </div>
         </div>
