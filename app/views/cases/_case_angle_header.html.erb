@@ -1,11 +1,13 @@
-<% rotation_class = "angle_#{degrees}" %>
 <th>
-  <%= link_to image_tag(@case.diagram, class: "card-img-top #{rotation_class}"), case_path(@case) %>
-  <%= content_tag :h2, rotation_label(degrees) %>
+  <%= content_tag :h2, rotation_string(degrees) %>
   <button type="button"
-          class="btn btn-primary"
+          class="btn btn-primary add-algorithm"
           data-toggle="modal"
-          data-target="#new_algorithm"
+          data-target="#new_algorithm_modal"
+          data-form-target="#new_algorithm"
+          data-form-value-angle="<%=degrees%>"
+          data-form-value-algorithm="R U FAKE"
+          data-form-value-case-id="<%=@case.id%>"
           aria-label="Add algorithm">
   +
 </button>

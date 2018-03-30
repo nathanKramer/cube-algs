@@ -1,0 +1,16 @@
+<table class="table  scope="col"algorithms-table">
+  <thead>
+    <th>#</th><th scope="col">Algorithm</th><th scope="col">Description</th>
+  </thead>
+  <tbody>
+    <% i = 0 %>
+    <% algorithms.each do |algorithm| %>
+    <% i += 1 %>
+      <tr>
+        <%= content_tag :td, i, scope: 'row' %>
+        <%= content_tag :td, link_to(algorithm.algorithm, algorithm_path(algorithm)) %>
+        <%= content_tag :td, algorithm.description %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

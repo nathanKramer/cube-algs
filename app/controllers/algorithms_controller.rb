@@ -9,12 +9,8 @@ class AlgorithmsController < ApplicationController
 
   # POST /algorithms
   def create
-    @algorithm = Algorithm.new(algorithm_params)
-    if @algorithm.save
-      redirect_to algorithms_path
-    else
-      render :new
-    end
+    @algorithm = Algorithm.create(algorithm_params)
+    render path_to_case(@algorithm.case)
   end
 
   # PUT /algorithms/:id
@@ -28,6 +24,7 @@ class AlgorithmsController < ApplicationController
 
   # GET /algorithms
   def index
+    @algorithm = Algorithm.new
     respond_to do |format|
       format.html
       format.xml { render xml: @algorithms }
@@ -52,7 +49,7 @@ class AlgorithmsController < ApplicationController
   private
 
   def find_algorithm
-    @algorithm = Algorithm.find(params[:id])
+    @algorithm = Algorithm.friendly.find(params[:id])
   end
 
   def search_algorithms
@@ -65,6 +62,6 @@ class AlgorithmsController < ApplicationController
   end
 
   def algorithm_params
-    params.require(:algorithm).permit([:algorithm, :description])
+    params.require(:algorithm).permit([:algorithm, :angle, :case_id, :description])
   end
 end

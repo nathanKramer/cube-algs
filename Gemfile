@@ -30,3 +30,9 @@ end
 group :test do
   gem 'capybara'
 end
+
+# Added at 2018-03-30 16:37:54 +1100 by nathankramer:
+gem "font-awesome-rails", "~> 4.7"
+
+# Added at 2018-03-30 18:20:40 +1100 by nathankramer:
+gem "friendly_id", "~> 5.2"

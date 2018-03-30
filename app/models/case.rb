@@ -12,4 +12,11 @@ class Case < ActiveRecord::Base
     angles.concat ['180', '270'] if self.order_of_rotational_symmetry == 4
     angles
   end
+
+  def to_s
+    name = "##{self.id}"
+    name += " #{self.nickname}" if self.nickname
+
+    name
+  end
 end

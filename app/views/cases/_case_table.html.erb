@@ -13,7 +13,7 @@
           <%= link_to image_tag(c.diagram, class: 'card-img-top case-diagram', width: '64px', height: '64px'), case_path(c) %>
         </td>
         <td>
-          <span class="algorithm-text"><%= c.algorithm %></span>
+          <%= content_tag :span, link_to(c.algorithm, algorithm_path(c.algorithm)), class: 'algorithm-text' %>
         </td>
         <td>
           <%= c.algorithm_notes %>

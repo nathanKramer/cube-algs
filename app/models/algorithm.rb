@@ -1,4 +1,6 @@
 class Algorithm < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :algorithm
   belongs_to :case
 
   scope :for_angle, -> (angle) { where(angle: angle) }
@@ -6,4 +8,8 @@ class Algorithm < ActiveRecord::Base
   validates :algorithm, presence: true, uniqueness: {
     message: 'has already been used'
   }
+
+  def similar_algorithms
+    self.case.algorithms.where.not(id: self.id)
+  end
 end
