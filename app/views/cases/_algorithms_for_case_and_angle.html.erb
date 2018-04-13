@@ -1,7 +1,7 @@
 <div class="row">
   <% @case.angles.each do |angle| %>
-    <div class="card centered">
-      <%= link_to image_tag(@case.diagram, class: "card-img-top #{rotation_class(angle)}"), case_path(@case) %>
+    <div class="card centered col-md-3">
+      <%= case_image(@case, html_class: 'card-img-top', angle: angle) %>
       <div class="card-body">
         <%= content_tag :div, rotation_string(angle), class: 'card-title' %>
         <div class="card-text"></div>

@@ -7,10 +7,12 @@ class Case < ActiveRecord::Base
   has_many :algorithms
 
   def angles
-    angles = ['0']
-    angles.push '90' if self.order_of_rotational_symmetry >= 2
-    angles.concat ['180', '270'] if self.order_of_rotational_symmetry == 4
-    angles
+    @angles ||= CubeWisdom.angles(order_of_rotational_symmetry)
+  end
+
+  def solutions(angle: nil)
+    return algorithms if angle.nil?
+    solutions_for_angle(angle)
   end
 
   def to_s
@@ -18,5 +20,16 @@ class Case < ActiveRecord::Base
     name += " #{self.nickname}" if self.nickname
 
     name
+  end
+
+  private
+
+  def solutions_for_angle(angle)
+    obvious_solutions = algorithms.for_angle(angle)
+    solutions_with_auf = []
+    obvious_solutions.each do |solution|
+      solutions_with_auf += [CubeWisdom.relevant_aufs(solution, order_of_rotational_symmetry)]
+    end
+
   end
 end
