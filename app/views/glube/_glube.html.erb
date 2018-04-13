@@ -1,6 +1,6 @@
 <%= render partial: 'glube/shaders' %>
 <div class="glube">
-  <canvas data-alg="<%= alg.algorithm %>" data-type="solver" data-stickers="OLL"></canvas>
+  <canvas data-alg="<%= solution.algorithm %>" data-type="solver" data-stickers="<%= type %>"></canvas>
   <div class="glube-controls">
       <button class="scramble-cube btn btn-info btn-sm"><span class="fa fa-random"></span></button>
       <button class="reset-cube btn btn-info btn-sm"><span class="fa fa-fast-backward"></span></button>
@@ -10,14 +10,14 @@
       </div>
       <button class="run-alg btn btn-info btn-sm"><span class="fa fa-play"></span></button>
       <button type="button"
-                class="btn btn-primary add-algorithm fa fa-save"
-                data-toggle="modal"
-                data-target="#new_algorithm_modal"
-                data-form-target="#new_algorithm"
-                data-form-value-angle="<%=alg.angle%>"
-                data-form-value-algorithm="<%=alg.algorithm%>"
-                data-form-value-case-id="<%=alg.case%>"
-                aria-label="Add algorithm">
+        class="btn btn-primary add-algorithm fa fa-save"
+        data-toggle="modal"
+        data-target="#new_solution_modal"
+        data-form-target="#new_algorithm"
+        data-form-value-angle="<%=solution.angle%>"
+        data-form-value-algorithm="<%=solution.algorithm%>"
+        data-form-value-case-id="<%=solution.case%>"
+        aria-label="Add algorithm">
       </button>
   </div>
 </div>

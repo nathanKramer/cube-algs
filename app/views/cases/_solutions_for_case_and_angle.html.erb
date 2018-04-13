@@ -7,8 +7,8 @@
         <div class="card-text"></div>
       </div>
       <ul class="list-group list-group-flush">
-        <% @case.algorithms.for_angle(angle).each do |algorithm| %>
-          <%= link_to algorithm.algorithm, algorithm_path(algorithm), class: 'list-group-item' %>
+        <% @case.solutions.for_angle(angle).each do |solution| %>
+          <%= link_to solution.algorithm, solution_path(solution), class: 'list-group-item' %>
         <% end %>
       </ul>
     </div>

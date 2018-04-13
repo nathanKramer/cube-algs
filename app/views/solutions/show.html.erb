@@ -1,4 +1,4 @@
-<%= render partial: 'behaviour/new_algorithm_modal' %>
+<%= render partial: 'behaviour/new_solution_modal' %>
 <div class="card">
   <div class="card-body">
     <div class="container">
@@ -7,7 +7,7 @@
           <span>Case image might go here</span>
         </div>
         <div class="col-md-8">
-          <%= render partial: 'glube/glube', locals: { alg: @algorithm } %>
+          <%= render partial: 'glube/glube', locals: { solution: @solution, type: @solution.case&.case_type || 'FULL' } %>
         </div>
         <div class="col-md-2">
           <span>inverse would go here, for example</span>
@@ -16,18 +16,18 @@
     </div>
     <div class="row">
       <div class="centered col-md-12">
-        <p><%= @algorithm.description %></p>
-        <span class="algorithm-text"><%= @algorithm.algorithm %></span>
+        <p><%= @solution.description %></p>
+        <span class="algorithm-inscription"><%= @solution.algorithm %></span>
       </div>
     </div>
   </div>
   <div class="card-body">
     <h3 class="card-title">Other solutions</h2>
-    <%= render partial: 'algorithms_table', locals: { algorithms: @algorithm.similar_algorithms } %>
+    <%= render partial: 'solutions_table', locals: { solutions: @solution.similar_algorithms } %>
   </div>
   <div class="card-body">
     <h3 class="card-title">Similar algorithms</h2>
-    <%= render partial: 'algorithms_table', locals: { algorithms: @algorithm.similar_algorithms } %>
+    <%= render partial: 'solutions_table', locals: { solutions: @solution.similar_algorithms } %>
   </div>
   <div class="card-footer">
     <%= render partial: 'admin' %>

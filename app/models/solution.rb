@@ -1,4 +1,4 @@
-class Algorithm < ActiveRecord::Base
+class Solution < ActiveRecord::Base
   extend FriendlyId
   friendly_id :algorithm
   belongs_to :case
@@ -10,6 +10,6 @@ class Algorithm < ActiveRecord::Base
   }
 
   def similar_algorithms
-    self.case.algorithms.where.not(id: self.id)
+    self.case.solutions.where.not(id: self.id)
   end
 end

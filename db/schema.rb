@@ -10,19 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180330072108) do
-
-  create_table "algorithms", force: :cascade do |t|
-    t.string "algorithm"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.text "description"
-    t.integer "case_id"
-    t.integer "angle"
-    t.integer "case_number"
-    t.index ["algorithm"], name: "index_algorithms_on_algorithm", unique: true
-    t.index ["case_number"], name: "index_algorithms_on_case_number"
-  end
+ActiveRecord::Schema.define(version: 20180413111829) do
 
   create_table "cases", force: :cascade do |t|
     t.string "case_type"
@@ -34,8 +22,8 @@ ActiveRecord::Schema.define(version: 20180330072108) do
     t.integer "order_of_rotational_symmetry", null: false
     t.integer "case_a_id"
     t.integer "case_b_id"
-    t.string "algorithm"
-    t.string "algorithm_notes"
+    t.string "solution"
+    t.string "solution_notes"
     t.integer "category_name_id"
     t.integer "case_number"
     t.index ["category_name_id"], name: "index_cases_on_category_name_id"
@@ -61,6 +49,18 @@ ActiveRecord::Schema.define(version: 20180330072108) do
   end
 
   create_table "reflections", force: :cascade do |t|
+  end
+
+  create_table "solutions", force: :cascade do |t|
+    t.string "algorithm"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "description"
+    t.integer "case_id"
+    t.integer "angle"
+    t.integer "case_number"
+    t.index ["algorithm"], name: "index_solutions_on_algorithm", unique: true
+    t.index ["case_number"], name: "index_solutions_on_case_number"
   end
 
 end

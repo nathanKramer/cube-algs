@@ -4,14 +4,14 @@ class Case < ActiveRecord::Base
   scope :f2l, -> { where(case_type: 'f2l') }
   belongs_to :category, foreign_key: :name
   has_one :reflection
-  has_many :algorithms
+  has_many :solutions
 
   def angles
-    @angles ||= CubeWisdom.angles(order_of_rotational_symmetry)
+    @angles ||= CubeWisdom::Angles.angles(order_of_rotational_symmetry)
   end
 
-  def solutions(angle: nil)
-    return algorithms if angle.nil?
+  def solution_list(angle: nil)
+    return solutions if angle.nil?
     solutions_for_angle(angle)
   end
 
@@ -25,11 +25,11 @@ class Case < ActiveRecord::Base
   private
 
   def solutions_for_angle(angle)
-    obvious_solutions = algorithms.for_angle(angle)
+    obvious_solutions = solutions.for_angle(angle)
     solutions_with_auf = []
     obvious_solutions.each do |solution|
       solutions_with_auf += [CubeWisdom.relevant_aufs(solution, order_of_rotational_symmetry)]
     end
-
+    solutions_with_auf
   end
 end

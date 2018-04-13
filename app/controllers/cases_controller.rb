@@ -35,7 +35,7 @@ class CasesController < ApplicationController
 
   # GET /cases/:id/show
   def show
-    @algorithm = Algorithm.new
+    @solution = Solution.new
   end
 
   # GET /cases/:id/edit
@@ -43,7 +43,7 @@ class CasesController < ApplicationController
   end
 
   def find_case
-    cases = Case.where("id = #{params[:id]}").includes(:algorithms)
+    cases = Case.where("id = #{params[:id]}").includes(:solutions)
     @case = cases.first
   end
 
@@ -54,9 +54,9 @@ class CasesController < ApplicationController
       @cases = scope.where(
         '(nickname LIKE ?)',
         filter
-      ).includes(:algorithms)
+      ).includes(:solutions)
     else
-      @cases = scope.all.includes(:algorithms)
+      @cases = scope.all.includes(:solutions)
     end
   end
 

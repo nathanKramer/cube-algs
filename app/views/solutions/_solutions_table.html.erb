@@ -4,12 +4,12 @@
   </thead>
   <tbody>
     <% i = 0 %>
-    <% algorithms.each do |algorithm| %>
+    <% solutions.each do |solution| %>
     <% i += 1 %>
       <tr>
         <%= content_tag :td, i, scope: 'row' %>
-        <%= content_tag :td, link_to(algorithm.algorithm, algorithm_path(algorithm)) %>
-        <%= content_tag :td, algorithm.description %>
+        <%= content_tag :td, link_to(solution.algorithm, solution_path(solution)) %>
+        <%= content_tag :td, solution.description %>
       </tr>
     <% end %>
   </tbody>

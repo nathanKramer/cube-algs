@@ -6,7 +6,7 @@ task import_cases: :environment do
   print 'Are you sure you want to continue? [y/N] '
   abort('Aborting...') unless $stdin.gets.downcase.chomp == 'y'
 
-  Algorithm.delete_all
+  Solution.delete_all
   Case.delete_all
 
   # Import from CSV...
@@ -14,12 +14,12 @@ task import_cases: :environment do
   csv = CSV.parse(csv_text, headers: true)
   csv.each do |row|
     row_hash = row.to_hash.symbolize_keys.except(:image)
-    if row_hash[:algorithm]
-      c = Case.create!(row_hash.except([:algorithm, :algorithm_notes]))
-      Algorithm.create!(
+    if row_hash[:solution]
+      c = Case.create!(row_hash)
+      Solution.create!(
         case: c,
-        algorithm: row_hash[:algorithm],
-        description: row_hash[:algorithm_notes],
+        algorithm: row_hash[:solution],
+        description: row_hash[:solution_notes],
         angle: '0'
       )
     end

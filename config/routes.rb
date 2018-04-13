@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get '/oll', to: 'cases#oll', as: :cases_oll
   get '/pll', to: 'cases#pll', as: :cases_pll
 
-  resources :algorithms
+  resources :solutions
   resources :cases, only: [:index, :show, :edit, :update]
   root 'cube_algs#home'
 end

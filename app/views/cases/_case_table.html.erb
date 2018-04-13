@@ -2,7 +2,7 @@
   <thead>
     <tr>
       <th>Diagram</th>
-      <th>Suggested Algorithm</th>
+      <th>Suggested Solution</th>
       <th>Notes</th>
     </tr>
   </thead>
@@ -10,14 +10,12 @@
     <% @cases.each do |c| %>
       <tr>
         <td>
-          <%= link_to image_tag(c.diagram, class: 'card-img-top case-diagram', width: '64px', height: '64px'), case_path(c) %>
+          <%= case_image(c, html_class: 'case-diagram') %>
         </td>
         <td>
-          <%= content_tag :span, link_to(c.algorithm, algorithm_path(c.algorithm)), class: 'algorithm-text' %>
+          <%= content_tag :span, link_to(c.solution, solution_path(c.solution)), class: 'algorithm-text' %>
         </td>
-        <td>
-          <%= c.algorithm_notes %>
-        </td>
+        <td><%= c.solution_notes %></td>
       </tr>
     <% end %>
   </tbody>

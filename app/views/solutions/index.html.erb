@@ -1,5 +1,5 @@
 <% content_for :search do %>
-  <%= form_tag algorithms_path, class: 'navbar-form', method: :get do %>
+  <%= form_tag solutions_path, class: 'navbar-form', method: :get do %>
     <div class="input-group">
       <%= text_field_tag :filter, @filter, name: 'Search', class: 'form-control', placeholder: 'Search for. . . ' %>
       <span class="input-group-btn">
@@ -9,7 +9,7 @@
   <% end %>
 <% end %>
 
-<%= render partial: 'behaviour/new_algorithm_modal' %>
+<%= render partial: 'behaviour/new_solution_modal' %>
 <div class="card">
   <div class="card-body">
     <h2 class="card-title">
@@ -17,13 +17,13 @@
     </h2>
   </div>
   <div class="card-body">
-    <%= render partial: 'glube/glube', locals: { alg: @algorithm } %>
+    <%= render partial: 'glube/glube', locals: { solution: @solution, type: @solution.case&.case_type || 'FULL' } %>
     <span class="card-text">
     </span>
   </div>
   <div class="card-body">
     <h3 class="card-title"></h2>
-    <%= render partial: 'algorithms_table', locals: { algorithms: Algorithm.all } %>
+    <%= render partial: 'solutions_table', locals: { solutions: Solution.all } %>
     </div>
   </div>
   <div class="card-footer">
